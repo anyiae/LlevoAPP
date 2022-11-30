@@ -1,0 +1,33 @@
+<ion-header >
+  <ion-toolbar color="mycolor">
+    <ion-title>Clima</ion-title>
+    <img class="img-logo" src="../../../assets/img/logo.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-body">
+        <form (submit)="submitLocation(cityName, cityCode)">
+          <input type="text" placeholder="City Name" class="form-control" autofocus #cityName>
+          <input type="text" placeholder="City Code" class="form-control" #cityCode>
+          <button class="btn btn-primary btn-block mt-2">
+            Obtener clima
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="weather" class="card card-body text-center">
+        <h1 class="h4">Clima de hoy</h1>
+        <p>Ciudad: {{weather.name}}</p>
+        <p>Temperatura: {{weather.main.temp}} °C</p>
+        <p>Humedad: {{weather.main.humidity}}</p>
+        <p>Presión: {{weather.main.pressure}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>

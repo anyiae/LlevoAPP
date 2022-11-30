@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="mycolor">
+    <ion-title>Inicio</ion-title>
+    <img class="img-logo" src="../../../assets/img/logo.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div id="container">
+    <strong>Bienvenido a Te Llevo App!</strong>
+    <p>La mejor plataforma para tus viajes 
+      <br>
+      <a [routerLink]="['/about']">Sobre Nosotros</a>
+      <br>
+      <a [routerLink]="['/coversor']">Coversor</a>
+      <br>
+      <a [routerLink]="['/clima']">Clima</a></p>
+
+
+  
+  </div>
+
+  
+  <app-fab-menu></app-fab-menu>
+</ion-content>
