@@ -1,3 +1,4 @@
+import { FirestoreService } from './../../services/firestore.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 
@@ -12,7 +13,7 @@ export class HomePage implements OnInit {
   isNotHome = false;
   loading: HTMLIonLoadingElement;
 
-  constructor(private loadingCtrl: LoadingController) { }
+  constructor(private loadingCtrl: LoadingController, private firestore: FirestoreService) { }
 
   ngOnInit(): void {
     this.cargarLoading('Bienvenido a TeLlevo APP (～￣▽￣)～');
@@ -54,6 +55,10 @@ export class HomePage implements OnInit {
       message,
     });
     await this.loading.present();
+  }
+
+  getUsuarios() {
+    this.firestore.getCollection()
   }
 
 

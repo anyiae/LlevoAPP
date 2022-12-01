@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-card>
+<ion-card-content>
+
+<form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+<ion-item>
+  <ion-label position="floating">Email</ion-label>
+  <ion-input formControlName="email"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating"> Password </ion-label>
+  <ion-input type="password" class=" form-control" formControlName="password"></ion-input>
+</ion-item>
+
+<ion-button type="submit" expand="block"> Sign in</ion-button>
+</form>
+
+<ion-text class="extra-options">No tienes una cuenta todavía?</ion-text>
+</ion-card-content>
+</ion-card>

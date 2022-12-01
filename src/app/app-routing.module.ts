@@ -1,3 +1,4 @@
+import { RegisterPage } from './pages/register/register.page';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -7,7 +8,7 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-
+  { path: 'register', component: RegisterPage },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
@@ -16,18 +17,12 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuPageModule)
   },
-  {
-    path: 'admin',
-    loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminPageModule)
-  },
+
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
-  {
-    path: 'user',
-    loadChildren: () => import('./pages/user/user.module').then(m => m.UserPageModule)
-  },
+
   {
     path: 'coversor',
     loadChildren: () => import('./pages/coversor/coversor.module').then(m => m.CoversorPageModule)
@@ -36,14 +31,16 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule)
   },
-  {
-    path: 'logout',
-    loadChildren: () => import('./pages/logout/logout.module').then(m => m.LogoutPageModule)
-  },
+
   {
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then(m => m.ClimaPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
   }
+
 
 ];
 
