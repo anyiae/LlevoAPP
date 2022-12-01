@@ -6,31 +6,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-title color="mycolor" class="ion-text-center">
-      <ion-label>
-        <h1>¡Logeate en tu cuenta!</h1>
-      </ion-label>
-    </ion-card-title>
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Username</ion-label>
-        <ion-input  type="text"
-                    [(ngModel)]="user.username"
-                    placeholder="correo@correo.com"
-                    pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-                    required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input  type="password"
-                    [(ngModel)]="user.password"
-                    pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{4,6}$"
-                    required></ion-input>
-      </ion-item>
-    </ion-card-content>
-    <ion-button shape="block" (click)="ingresar()">Login</ion-button>
-  </ion-card>
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      <ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">Formato Email no válido</ion-note>
+    </ion-item>
 
-  <app-fab-menu></app-fab-menu>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">El password debe contener al menos 6 caracteres</ion-note>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!credentials.valid">Login</ion-button>
+    <ion-button expand="full" type="button" (click)="register()">Crear cuenta</ion-button>
+
+  </form>
 </ion-content>

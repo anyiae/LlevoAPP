@@ -22,6 +22,15 @@
   
   </div>
 
-  
+  <div class="avatar">
+    <ion-avatar (click)="uploadAvatar()">
+      <img *ngIf="profile?.imageUrl; else placeholder_avatar;" [src]="profile.imageUrl" />
+      <ng-template #placeholder_avatar>
+        <div class="no-avatar">
+          <p>Ingresa tu foto</p>
+        </div>
+      </ng-template>
+    </ion-avatar>
+  </div>
   <app-fab-menu></app-fab-menu>
 </ion-content>

@@ -1,4 +1,3 @@
-import { RegisterPage } from './pages/register/register.page';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -8,7 +7,7 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  { path: 'register', component: RegisterPage },
+
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
@@ -36,10 +35,7 @@ const routes: Routes = [
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then(m => m.ClimaPageModule)
   },
-  {
-    path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
-  }
+
 
 
 ];

@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "tellevoapp-fcac4": {
+      "hosting": {
+        "app": [
+          "tellevoapp-fcac4"
+        ]
+      }
+    },
+    "tellevo-firebase-auth": {
+      "hosting": {
+        "app": [
+          "tellevo-firebase-auth"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tellevo-firebase-auth"
+  }
+}

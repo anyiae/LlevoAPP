@@ -1,12 +1,12 @@
 export const environment = {
+  firebase: {
+    projectId: 'tellevo-firebase-auth',
+    appId: '1:131875633826:web:ae7f79d49e8b9609a9f5fb',
+    storageBucket: 'tellevo-firebase-auth.appspot.com',
+    apiKey: 'AIzaSyAEvEMOXz8mLnnZ15OXcc0IPZTBWQ7b6G4',
+    authDomain: 'tellevo-firebase-auth.firebaseapp.com',
+    messagingSenderId: '131875633826',
+  },
   production: true,
-  firebaseConfig: {
-    apiKey: "AIzaSyDEjZYCScajJ3c54721fXuxbkbmHqqShjQ",
-    authDomain: "tellevoapp-fcac4.firebaseapp.com",
-    projectId: "tellevoapp-fcac4",
-    storageBucket: "tellevoapp-fcac4.appspot.com",
-    messagingSenderId: "391993192244",
-    appId: "1:391993192244:web:864fde2df59c4ebdf8ff61",
-    measurementId: "G-PL4L18N621"
-  }
+
 };
