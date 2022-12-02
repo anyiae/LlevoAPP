@@ -5,5 +5,9 @@ export interface Usuario {
     gender: string;
     age: number;
     email: string;
+    jornada: string;
+    direccion: string;
+    telefono: string;
+    rut: string;
     image: string;
 }

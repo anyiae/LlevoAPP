@@ -4,25 +4,57 @@
     <img class="img-logo" src="../../../assets/img/logo.png" alt="">
   </ion-toolbar>
 </ion-header>
+<ion-content [fullscreen]="true">
 
-<ion-content>
+
+  <ion-slides [options]="option" class="ion-margin-top">
+    
+    
+    <ion-slide>
+      <ion-card>
+        <img src="../../../assets/img/bus1.jpg">
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-card>
+        <img src="../../../assets/img/bus2.jpg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img src="../../../assets/img/bus3.jpg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img src="../../../assets/img/bus4.jpg">
+      </ion-card>
+    </ion-slide>
 
 
-  <div id="container">
+
+
+  </ion-slides>
+
+   <div id="container">
     <strong>Bienvenido a Te Llevo App!</strong>
     <p>La mejor plataforma para tus viajes 
       <br>
       <a [routerLink]="['/about']">Sobre Nosotros</a>
       <br>
-      <a [routerLink]="['/coversor']">Coversor</a>
+      <a [routerLink]="['/coversor']">Conversor</a>
       <br>
-      <a [routerLink]="['/clima']">Clima</a></p>
+      <a [routerLink]="['/clima']">Clima</a>
+      <br>
+      <a [routerLink]="['/usuarios']">Registro de Choferes</a>
+    </p>
+</div>
 
 
-  
-  </div>
-
-  <div class="avatar">
+<!--- <div class="avatar">
     <ion-avatar (click)="uploadAvatar()">
       <img *ngIf="profile?.imageUrl; else placeholder_avatar;" [src]="profile.imageUrl" />
       <ng-template #placeholder_avatar>
@@ -31,6 +63,6 @@
         </div>
       </ng-template>
     </ion-avatar>
-  </div>
-  <app-fab-menu></app-fab-menu>
+  </div> -->
+ 
 </ion-content>

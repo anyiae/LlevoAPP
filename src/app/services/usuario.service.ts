@@ -34,6 +34,10 @@ export class UsuarioService {
         gender: usuario.gender,
         age: usuario.age,
         email: usuario.email,
+        jornada: usuario.jornada,
+        direccion: usuario.direccion,
+        telefono: usuario.telefono,
+        rut: usuario.rut,
         image: usuario.image
       }
     );

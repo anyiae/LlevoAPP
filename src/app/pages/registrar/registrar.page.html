@@ -9,24 +9,40 @@
     <ion-card-content>
   <div *ngIf="usuario">
     <ion-item>
-      <ion-label position="floating">Name</ion-label>
+      <ion-label position="floating">Nombre</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.name" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Lastname</ion-label>
+      <ion-label position="floating">Apellido</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.lastname" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Gender</ion-label>
+      <ion-label position="floating">Sexo</ion-label>
       <ion-input type="text" [(ngModel)]="usuario.gender" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Age</ion-label>
+      <ion-label position="floating">Edad</ion-label>
       <ion-input type="number" [(ngModel)]="usuario.age" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Email</ion-label>
       <ion-input type="email" [(ngModel)]="usuario.email" required></ion-input>
+    </ion-item>
+        <ion-item>
+      <ion-label position="floating">Jornada</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.jornada" required></ion-input>
+    </ion-item>
+        <ion-item>
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.direccion" required></ion-input>
+    </ion-item>
+        <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.telefono" required></ion-input>
+    </ion-item>
+        <ion-item>
+      <ion-label position="floating">Rut</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.rut" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Image</ion-label>
@@ -36,9 +52,9 @@
   </ion-card-content>
 </ion-card>
   <ion-button expand="block" color="success" (click)="updateUsuario()">
-    <ion-icon name="save" slot="start">UPDATE</ion-icon>
+    <ion-icon name="save" slot="start">Actualizar usuario</ion-icon>
   </ion-button>
   <ion-button expand="block" color="danger" (click)="deleteUsuario()">
-    <ion-icon name="trash" slot="start">DELETE</ion-icon>
+    <ion-icon name="trash" slot="start">Eliminar usuario</ion-icon>
   </ion-button>
 </ion-content>

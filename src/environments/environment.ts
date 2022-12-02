@@ -4,10 +4,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 export const environment = {
-
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   firebase: {
     projectId: 'tellevo-firebase-auth',
     appId: '1:131875633826:web:ae7f79d49e8b9609a9f5fb',
@@ -15,8 +11,13 @@ export const environment = {
     apiKey: 'AIzaSyAEvEMOXz8mLnnZ15OXcc0IPZTBWQ7b6G4',
     authDomain: 'tellevo-firebase-auth.firebaseapp.com',
     messagingSenderId: '131875633826',
+    measurementId: 'G-WFKQRQ0L5C',
   },
-  production: false
+  production: false,
+
+  API_KEY: '7eaaff8fc1bdd20dec54dd77f7aed69d',
+  API_URL: 'https://api.openweathermap.org/data/2.5/'
+
 
 };
 

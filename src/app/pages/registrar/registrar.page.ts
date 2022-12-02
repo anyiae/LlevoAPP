@@ -29,13 +29,13 @@ export class RegistrarPage {
   async updateUsuario() {
     this.usuarioService.updateUsuario(this.usuario);
     this.modalCtrl.dismiss();
-    this.toasPresent('User updated!!!');
+    this.toasPresent('Usuario actualizado');
   }
 
   async deleteUsuario() {
     const alert = await this.alertCtrl.create({
       header: 'Mensajes',
-      message: 'Estas seguro que deseas eliminar al usuario?',
+      message: '¿Esta seguro que deseas eliminar al usuario?',
       buttons: [
         {
           text: 'Cancel',
@@ -47,7 +47,7 @@ export class RegistrarPage {
           handler: () => {
             this.usuarioService.deleteUsuario(this.usuario);
             this.modalCtrl.dismiss();
-            this.toasPresent('User deleted!!!');
+            this.toasPresent('Usario eliminado');
           }
         }
       ]

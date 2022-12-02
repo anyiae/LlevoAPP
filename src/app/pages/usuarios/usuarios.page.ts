@@ -36,27 +36,27 @@ export class UsuariosPage {
 
   async addUsuario() {
     const alert = await this.alertCtrl.create({
-      header: 'Add User',
+      header: 'Ingresar chofer',
       inputs: [
         {
           name: "name",
           type: "text",
-          placeholder: "Name"
+          placeholder: "Nombre"
         },
         {
           name: "lastname",
           type: "text",
-          placeholder: "Lastname"
+          placeholder: "Apellido"
         },
         {
           name: "gender",
           type: "text",
-          placeholder: "Gender"
+          placeholder: "Sexo"
         },
         {
           name: "age",
           type: "number",
-          placeholder: "Age"
+          placeholder: "Edad"
         },
         {
           name: "email",
@@ -64,9 +64,29 @@ export class UsuariosPage {
           placeholder: "correo@correo.com"
         },
         {
+          name: "jornada",
+          type: "text",
+          placeholder: "Jornada"
+        },
+        {
+          name: "direccion",
+          type: "text",
+          placeholder: "Direccion"
+        },
+        {
+          name: "telefono",
+          type: "text",
+          placeholder: "Telefono"
+        },
+        {
+          name: "rut",
+          type: "text",
+          placeholder: "Rut"
+        },
+        {
           name: "image",
           type: "url",
-          placeholder: "Link image"
+          placeholder: "Agregar foto"
         }
       ],
       buttons: [
@@ -79,7 +99,7 @@ export class UsuariosPage {
           role: 'confirm',
           handler: (data) => {
             this.usuarioService.addUsuario(data);
-            this.toasPresent('User added!!!');
+            this.toasPresent('Chofer añadido');
           }
         }
       ]

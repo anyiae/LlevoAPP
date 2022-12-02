@@ -34,14 +34,17 @@ const routes: Routes = [
   {
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then(m => m.ClimaPageModule)
-  },  {
+  },
+  {
     path: 'registrar',
-    loadChildren: () => import('./pages/registrar/registrar.module').then( m => m.RegistrarPageModule)
+    loadChildren: () => import('./pages/registrar/registrar.module').then(m => m.RegistrarPageModule)
   },
   {
     path: 'usuarios',
-    loadChildren: () => import('./pages/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+    loadChildren: () => import('./pages/usuarios/usuarios.module').then(m => m.UsuariosPageModule)
   },
+
+
 
 
 

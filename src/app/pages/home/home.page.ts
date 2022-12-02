@@ -24,6 +24,13 @@ export class HomePage {
     this.loadProfile();
   }
 
+  option = {
+    slidesPerView: 1.5,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 10,
+    autplay: true,
+  }
   logout() {
     this.authService.logout();
     this.router.navigateByUrl('/', { replaceUrl: true })
