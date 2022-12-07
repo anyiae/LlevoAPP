@@ -28,4 +28,44 @@ ion-modal {
 .custom-icon {
     width: 30px;
 }
+/* ion-card {
+  width: 50%;
+  height: 30%;
+  border-radius: 20px;
+}
+
+ion-card .card {
+  justify-content: center;
+}
+
+form-control {
+  justify-content: center;
+  left: 30%;
+} */
+
+ion-card-content {
+  justify-content: center;
+  left: 30%;
+} 
+
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+img {
+  width: 100%;
+  height: 30%;
+}
+
+ion-card-header {
+  justify-content: center;
+  left: 30%;
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+button {
+
+}
 
