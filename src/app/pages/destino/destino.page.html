@@ -10,10 +10,14 @@
 
 <ion-content>
   <ion-list *ngIf="info">
-<ion-card>
+    <ion-card class="card1">
+  <p> ¿A donde irás hoy?</p>
+  <h5> Escribe tu comuna de destino de el día de hoy </h5>
+  </ion-card>
+<ion-card class="card2">
   <ion-item>
    <ion-label>
-        Comuna:
+        Destino:
         {{info.comuna}}
       </ion-label>
       <ion-icon (click)="editAtributo('comuna')" slot="end" name="create"></ion-icon>

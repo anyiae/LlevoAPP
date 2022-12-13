@@ -99,14 +99,14 @@ export class DestinoPage implements OnInit {
   }
 
   async saveAtributo(name: string, input: any) {
-    await this.interactionService.presentLoading('actualizando...')
+    await this.interactionService.presentLoading('Actualizando destino..')
     const path = 'Chofer';
     const id = this.uid;
     const updateDoc = {
     };
     updateDoc[name] = input;
     this.firestoreService.updateDoc(path, id, updateDoc).then(() => {
-      this.interactionService.presentToast('actualizado con éxito')
+      this.interactionService.presentToast('Destino confirmado')
       this.interactionService.closeLoading();
     })
   }
