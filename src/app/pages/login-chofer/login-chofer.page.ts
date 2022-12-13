@@ -5,13 +5,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, IonButton, LoadingController } from '@ionic/angular';
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-login-chofer',
+  templateUrl: './login-chofer.page.html',
+  styleUrls: ['./login-chofer.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginChoferPage implements OnInit {
 
   credentials!: FormGroup;
 
@@ -52,7 +51,7 @@ export class LoginPage implements OnInit {
 
 
     if (user) {
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/menu2');
     }
     else {
       this.alertPresent('Registro fallido', 'Revise bien los datos ingresado e inténtelo nuevamente más rato...');
@@ -67,7 +66,7 @@ export class LoginPage implements OnInit {
     await loading.dismiss();
 
     if (user) {
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/menu2');
     }
     else {
       this.alertPresent('Ingreso fallido', 'Revise bien los datos ingresado e inténtelo nuevamente más rato...');

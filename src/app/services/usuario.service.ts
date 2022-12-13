@@ -30,11 +30,11 @@ export class UsuarioService {
     return updateDoc(usuarioRef,
       {
         name: usuario.name,
-        lastname: usuario.lastname,
+        password: usuario.password,
         gender: usuario.gender,
         age: usuario.age,
         email: usuario.email,
-        jornada: usuario.jornada,
+        comuna: usuario.comuna,
         direccion: usuario.direccion,
         telefono: usuario.telefono,
         rut: usuario.rut,

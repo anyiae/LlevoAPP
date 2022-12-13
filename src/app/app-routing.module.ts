@@ -4,17 +4,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
 
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
-  },
-  {
-    path: 'menu',
-    loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuPageModule)
   },
 
   {
@@ -35,14 +31,39 @@ const routes: Routes = [
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then(m => m.ClimaPageModule)
   },
+
   {
-    path: 'registrar',
-    loadChildren: () => import('./pages/registrar/registrar.module').then(m => m.RegistrarPageModule)
+    path: 'viajar',
+    loadChildren: () => import('./pages/viajar/viajar.module').then(m => m.ViajarPageModule)
   },
   {
-    path: 'usuarios',
-    loadChildren: () => import('./pages/usuarios/usuarios.module').then(m => m.UsuariosPageModule)
+    path: 'menu2',
+    loadChildren: () => import('./pages/menu2/menu2.module').then(m => m.Menu2PageModule)
   },
+  {
+    path: 'prueba',
+    loadChildren: () => import('./pages/prueba/prueba.module').then(m => m.PruebaPageModule)
+  },
+  {
+    path: 'login-chofer',
+    loadChildren: () => import('./pages/login-chofer/login-chofer.module').then(m => m.LoginChoferPageModule)
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule)
+  },
+  {
+    path: 'registrochofer',
+    loadChildren: () => import('./pages/registrochofer/registrochofer.module').then(m => m.RegistrochoferPageModule)
+  },
+
+
+
+
+
+
+
+
 
 
 

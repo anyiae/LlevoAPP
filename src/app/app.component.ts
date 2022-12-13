@@ -11,14 +11,16 @@ export class AppComponent {
     { title: 'About', url: '/about', icon: 'person' },
     { title: 'Coversor', url: '/coversor', icon: 'construct' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },
-    { title: 'Registrar', url: '/usuarios', icon: 'person-add' },
 
   ];
 
   constructor(private router: Router) { }
   goToHome() {
-    this.router.navigate(['/home'])
+    this.router.navigate(['/inicio'])
+  }
+
+  goToMenu() {
+    this.router.navigate(['/menu2'])
   }
 
 }
-
