@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  rol: 'usuario' | 'chofer' = 'chofer';
   public appPages = [
-    { title: 'Home', url: '/home', icon: 'home' },
     { title: 'About', url: '/about', icon: 'person' },
     { title: 'Coversor', url: '/coversor', icon: 'construct' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },

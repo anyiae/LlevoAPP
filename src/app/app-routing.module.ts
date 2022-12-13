@@ -55,18 +55,18 @@ const routes: Routes = [
   {
     path: 'registrochofer',
     loadChildren: () => import('./pages/registrochofer/registrochofer.module').then(m => m.RegistrochoferPageModule)
+  },  {
+    path: 'modificar-u',
+    loadChildren: () => import('./pages/modificar-u/modificar-u.module').then( m => m.ModificarUPageModule)
   },
-
-
-
-
-
-
-
-
-
-
-
+  {
+    path: 'modificar-c',
+    loadChildren: () => import('./pages/modificar-c/modificar-c.module').then( m => m.ModificarCPageModule)
+  },
+  {
+    path: 'destino',
+    loadChildren: () => import('./pages/destino/destino.module').then( m => m.DestinoPageModule)
+  }
 
 
 

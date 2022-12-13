@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Menu2Page implements OnInit {
 
+  rol: 'usuario' | 'chofer' = 'chofer';
+
   constructor() { }
 
   ngOnInit() {

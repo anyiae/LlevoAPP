@@ -26,6 +26,7 @@ export class RegistrochoferPage implements OnInit {
     perfil: 'chofer',
   }
 
+
   constructor(private auth: Auth2Service,
     private firestore: FirestoreService,
     private router: Router) { }

@@ -16,11 +16,10 @@ export class FirestoreService {
     const collection = this.firestore.collection(path);
     return collection.doc(id).set(data);
   }
+
   getId() {
     return this.firestore.createId();
   }
-
-
 
   getCollection<tipo>(path: string) {
 
@@ -36,12 +35,4 @@ export class FirestoreService {
   updateDoc(path: string, id: string, data: any) {
     return this.firestore.collection(path).doc(id).update(data);
   }
-  /*
-  getCollection() {
-    console.log('Entrando a la lista de Usuarios')
-    this.firestore.collection('Usuarios').get().subscribe((res) => {
-
-    })
-  };
-  */
 }
