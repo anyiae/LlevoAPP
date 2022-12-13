@@ -2,10 +2,78 @@
   <ion-toolbar>
     <ion-title>Modificar usuario</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home" ></ion-back-button>
+      <ion-back-button defaultHref="menu2" ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
 
+
+<ion-content>
+  
+  <ion-list *ngIf="info">
+    <ion-item>
+      <ion-label> Nombre:
+        {{info.nombre}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('nombre')" slot="end" name="create"></ion-icon>
+    </ion-item>
+     <ion-item>
+      <ion-label>
+        Edad:
+        {{info.edad}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('edad')" slot="end" name="create"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Correo:
+        {{info.correo}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('correo')" slot="end" name="create"></ion-icon>
+    </ion-item>
+        <ion-item>
+      <ion-label>
+        Género:
+        {{info.sexo}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('sexo')" slot="end" name="create"></ion-icon>
+    </ion-item>
+        <ion-item>
+      <ion-label>
+        Comuna:
+        {{info.comuna}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('comuna')" slot="end" name="create"></ion-icon>
+    </ion-item>
+        <ion-item>
+      <ion-label>
+        Motivo:
+        {{info.motivo}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('motivo')" slot="end" name="create"></ion-icon>
+    </ion-item>
+        <ion-item>
+      <ion-label>
+        Telefono:
+        {{info.telefono}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('telefono')" slot="end" name="create"></ion-icon>
+    </ion-item>
+        <ion-item>
+      <ion-label>
+        Rut:
+        {{info.rut}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('rut')" slot="end" name="create"></ion-icon>
+    </ion-item>
+        <ion-item>
+      <ion-label>
+        Avatar:
+        {{info.imagen}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('imagen')" slot="end" name="create"></ion-icon>
+    </ion-item>
+
+   
+  </ion-list>
 </ion-content>

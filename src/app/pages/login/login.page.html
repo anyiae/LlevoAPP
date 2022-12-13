@@ -7,20 +7,25 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="login()" [formGroup]="credentials">
-    <ion-item class="ion-margin-bottom">
-      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-      <ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">Formato Email no válido</ion-note>
-    </ion-item>
+  
 
-    <ion-item class="ion-margin-bottom">
-      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
-      <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">El password debe contener al menos 6 caracteres</ion-note>
-    </ion-item>
 
-    <ion-button expand="full" type="submit" [disabled]="!credentials.valid">Login</ion-button>
-    <ion-label> Aun no tienes cuenta? </ion-label>
-    <a [routerLink]="['/prueba']">Registrate aquí como usuario</a>
+  <ion-item>
+    <ion-label>Correo</ion-label>
+    <ion-input type="email" [(ngModel)]="credenciales.correo"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="credenciales.password"></ion-input>
+  </ion-item>
 
-  </form>
+<ion-button (click)="login()">
+  Login
+</ion-button>
+
+
+<ion-button [routerLink]="['/prueba']" routerLinkActive="router-link-active" >
+ O Registrate
+</ion-button>
 </ion-content>

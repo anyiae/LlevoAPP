@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { UserI } from 'src/app/models/models';
+import {
+  UserC
+} from 'src/app/models/models';
 import { Auth2Service } from 'src/app/services/auth2.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { InteractionService } from 'src/app/services/interaction.service';
@@ -13,12 +15,23 @@ import { InteractionService } from 'src/app/services/interaction.service';
 export class ModificarCPage implements OnInit {
 
   uid: string = null;
-  info: UserI = null;
+  info: UserC = null;
+  login: boolean = false;
 
   constructor(private authService: Auth2Service,
     private firestoreService: FirestoreService,
     public alertController: AlertController,
-    private interactionService: InteractionService) { }
+    private interactionService: InteractionService) {
+    this.authService.stateUser().subscribe(res => {
+      if (res) {
+        console.log('está logeado');
+        this.login = true;
+      } else {
+        console.log('no está logeado');
+        this.login = false;
+      }
+    })
+  }
 
   async ngOnInit() {
     console.log('estoy en perfil');
@@ -45,9 +58,9 @@ export class ModificarCPage implements OnInit {
   }
 
   getInfoUser() {
-    const path = 'Usuarios';
+    const path = 'Chofer';
     const id = this.uid;
-    this.firestoreService.getDoc<UserI>(path, id).subscribe(res => {
+    this.firestoreService.getDoc<UserC>(path, id).subscribe(res => {
       if (res) {
         this.info = res;
       }
@@ -91,7 +104,7 @@ export class ModificarCPage implements OnInit {
 
   async saveAtributo(name: string, input: any) {
     await this.interactionService.presentLoading('actualizando...')
-    const path = 'Usuarios';
+    const path = 'Chofer';
     const id = this.uid;
     const updateDoc = {
     };

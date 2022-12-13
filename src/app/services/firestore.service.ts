@@ -1,7 +1,7 @@
 import { collection } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,12 @@ export class FirestoreService {
 
 
 
+
   createDoc(data: any, path: string, id: string) {
+
     const collection = this.firestore.collection(path);
     return collection.doc(id).set(data);
+
   }
 
   getId() {
