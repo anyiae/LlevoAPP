@@ -22,5 +22,8 @@ export class AppComponent {
   goToMenu() {
     this.router.navigate(['/menu2'])
   }
+  goToLogin() {
+    this.router.navigate(['/login'])
+  }
 
 }
