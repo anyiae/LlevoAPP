@@ -19,7 +19,7 @@ export interface UserC {
     correo: string;
     uid: string;
     password: string;
-    sexo: string;
+    precio: string;
     patente: string;
     modelo: string;
     comuna: string;

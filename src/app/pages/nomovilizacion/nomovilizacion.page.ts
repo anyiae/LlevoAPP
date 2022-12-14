@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Firestore } from 'firebase/firestore';
+
 
 @Component({
   selector: 'app-nomovilizacion',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NomovilizacionPage implements OnInit {
 
-  constructor() { }
+  constructor(private firestore: Firestore) { }
 
   ngOnInit() {
   }
 
 }
+
+

@@ -34,7 +34,7 @@ export class ChoferService {
         nombre: usuario.nombre,
         capacidad: usuario.capacidad,
         correo: usuario.correo,
-        sexo: usuario.sexo,
+        precio: usuario.precio,
         patente: usuario.patente,
         modelo: usuario.modelo,
         comuna: usuario.comuna,

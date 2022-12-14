@@ -17,7 +17,7 @@ export class RegistrochoferPage implements OnInit {
     correo: null,
     uid: null,
     password: null,
-    sexo: null,
+    precio: null,
     patente: null,
     modelo: null,
     comuna: null,
