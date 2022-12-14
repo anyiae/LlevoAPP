@@ -13,7 +13,7 @@ export class PruebaPage implements OnInit {
 
   datos: UserI = {
     nombre: null,
-    edad: null,
+    capacidad: null,
     correo: null,
     uid: null,
     password: null,

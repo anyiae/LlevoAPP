@@ -1,20 +1,22 @@
+import { ChoferService } from './../../services/chofer.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ViajarPageRoutingModule } from './viajar-routing.module';
+import { ModalPageRoutingModule } from './modal-routing.module';
 
-import { ViajarPage } from './viajar.page';
+import { ModalPage } from './modal.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ViajarPageRoutingModule
+    ModalPageRoutingModule,
+
   ],
-  declarations: [ViajarPage]
+  declarations: [ModalPage]
 })
-export class ViajarPageModule { }
+export class ModalPageModule { }

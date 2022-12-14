@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -16,8 +17,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireModule } from '@angular/fire/compat';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ChoferService } from './services/chofer.service';
+
 @NgModule({
   declarations: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [BrowserModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule, AngularFireStorageModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
@@ -34,10 +39,13 @@ import { AngularFireModule } from '@angular/fire/compat';
     }),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule,
+    ReactiveFormsModule,
+
 
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ChoferService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

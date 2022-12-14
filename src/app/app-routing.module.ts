@@ -17,7 +17,14 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
-
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./pages/usuarios/usuarios.module').then(m => m.UsuariosPageModule)
+  },
+  {
+    path: 'registrar',
+    loadChildren: () => import('./pages/registrar/registrar.module').then(m => m.RegistrarPageModule)
+  },
   {
     path: 'coversor',
     loadChildren: () => import('./pages/coversor/coversor.module').then(m => m.CoversorPageModule)
@@ -55,18 +62,31 @@ const routes: Routes = [
   {
     path: 'registrochofer',
     loadChildren: () => import('./pages/registrochofer/registrochofer.module').then(m => m.RegistrochoferPageModule)
-  },  {
+  },
+  {
     path: 'modificar-u',
-    loadChildren: () => import('./pages/modificar-u/modificar-u.module').then( m => m.ModificarUPageModule)
+    loadChildren: () => import('./pages/modificar-u/modificar-u.module').then(m => m.ModificarUPageModule)
   },
   {
     path: 'modificar-c',
-    loadChildren: () => import('./pages/modificar-c/modificar-c.module').then( m => m.ModificarCPageModule)
+    loadChildren: () => import('./pages/modificar-c/modificar-c.module').then(m => m.ModificarCPageModule)
   },
   {
     path: 'destino',
-    loadChildren: () => import('./pages/destino/destino.module').then( m => m.DestinoPageModule)
+    loadChildren: () => import('./pages/destino/destino.module').then(m => m.DestinoPageModule)
+  },
+  {
+    path: 'modal',
+    loadChildren: () => import('./pages/modal/modal.module').then(m => m.ModalPageModule)
+  },  {
+    path: 'transporte',
+    loadChildren: () => import('./pages/transporte/transporte.module').then( m => m.TransportePageModule)
+  },
+  {
+    path: 'nomovilizacion',
+    loadChildren: () => import('./pages/nomovilizacion/nomovilizacion.module').then( m => m.NomovilizacionPageModule)
   }
+
 
 
 

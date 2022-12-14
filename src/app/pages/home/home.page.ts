@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth.service';
+import { Auth2Service } from 'src/app/services/auth2.service';
 import { AvatarService } from 'src/app/services/avatar.service';
 
 
@@ -15,7 +15,7 @@ export class HomePage {
 
   profile: any = null;
 
-  constructor(private authService: AuthService,
+  constructor(private authService: Auth2Service,
     private avatarService: AvatarService,
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
@@ -32,7 +32,7 @@ export class HomePage {
     autplay: true,
   }
   logout() {
-    this.authService.logout();
+    this.authService.logut();
     this.router.navigateByUrl('/', { replaceUrl: true })
   }
 

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import {
-  UserC
-} from 'src/app/models/models';
+import { UserC } from 'src/app/models/models';
 import { Auth2Service } from 'src/app/services/auth2.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { InteractionService } from 'src/app/services/interaction.service';
@@ -21,6 +20,7 @@ export class ModificarCPage implements OnInit {
   constructor(private authService: Auth2Service,
     private firestoreService: FirestoreService,
     public alertController: AlertController,
+    private router: Router,
     private interactionService: InteractionService) {
     this.authService.stateUser().subscribe(res => {
       if (res) {
@@ -113,6 +113,17 @@ export class ModificarCPage implements OnInit {
       this.interactionService.presentToast('actualizado con éxito')
       this.interactionService.closeLoading();
     })
+  }
+
+  async eliminar(info: UserC) {
+    const res = await this.interactionService.presentAlert('¿Seguro que deseas eliminar?');
+    console.log('res ->', res);
+    if (res) {
+      const path = 'Chofer';
+      await this.firestoreService.deletedoc(path, info.uid);
+      this.interactionService.presentToast('Eliminado con éxito')
+      this.router.navigate(['/inicio'])
+    }
   }
 
 }

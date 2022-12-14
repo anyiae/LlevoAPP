@@ -1,6 +1,6 @@
 export interface UserI {
     nombre: string;
-    edad: number;
+    capacidad: number;
     correo: string;
     uid: string;
     password: string;
@@ -15,7 +15,7 @@ export interface UserI {
 
 export interface UserC {
     nombre: string;
-    edad: number;
+    capacidad: number;
     correo: string;
     uid: string;
     password: string;

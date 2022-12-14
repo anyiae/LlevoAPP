@@ -13,7 +13,7 @@ export class RegistrochoferPage implements OnInit {
 
   datos: UserC = {
     nombre: null,
-    edad: null,
+    capacidad: null,
     correo: null,
     uid: null,
     password: null,

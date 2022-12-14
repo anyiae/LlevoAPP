@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ViajarPageRoutingModule } from './viajar-routing.module';
+import { RegistrarPageRoutingModule } from './registrar-routing.module';
 
-import { ViajarPage } from './viajar.page';
+import { RegistrarPage } from './registrar.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ViajarPageRoutingModule
+    RegistrarPageRoutingModule
   ],
-  declarations: [ViajarPage]
+  declarations: [RegistrarPage]
 })
-export class ViajarPageModule { }
+export class RegistrarPageModule {}
