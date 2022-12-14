@@ -1,0 +1,33 @@
+<app-header [pageTitle]="pageTitle"></app-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      <ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">Email debe poser el siguiente formato xxxx@gmail.com</ion-note>
+    </ion-item>
+    
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">El password debe contener al menos 6 caracteres</ion-note>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="text" placeholder="nombre" formControlName="name"></ion-input>
+      <ion-note slot="error" *ngIf="(name?.dirty || name?.touched) && name?.errors"> debe contener al menos 6 caracteres</ion-note>
+    </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="text" placeholder="edad" formControlName="age"></ion-input>
+      <ion-note slot="error" *ngIf="(age?.dirty || age?.touched) && age?.errors"> debe contener al menos 6 caracteres</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="absolute">Foto</ion-label>
+      <ion-button (click)="takePhoto()" required>Escoger foto</ion-button>   
+    </ion-item>
+
+    <ion-button expand="full" type="submit" >Ingresar al sistema</ion-button>
+    <ion-button expand="full" type="button" [disabled]="!credentials.valid" (click)="guardarUser()&& register() ">Crear cuenta</ion-button>
+
+  </form>
+</ion-content>

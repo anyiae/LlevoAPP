@@ -28,4 +28,14 @@ export class AuthService {
   logout() {
     return signOut(this.auth);
   }
+  async getid()
+  {
+    const user= await this.auth.currentUser;
+    if(user === undefined)
+    {
+      return null;
+    }else{
+      return user.uid
+    }
+  }
 }

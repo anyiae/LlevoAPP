@@ -1,13 +1,12 @@
 export interface Usuario {
-    id?: string;
-    name: string;
-    lastname: string;
-    gender: string;
-    age: number;
-    email: string;
-    jornada: string;
-    direccion: string;
-    telefono: string;
-    rut: string;
-    image: string;
+    uid:string;
+    name:string;
+    lastname:string;
+    gender:string;
+    age:number;
+    email:string;
+    comuna:number;
+    rut:string;
+    disponible:boolean;
+    image:string;
 }
