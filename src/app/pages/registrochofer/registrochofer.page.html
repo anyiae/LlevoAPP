@@ -38,10 +38,13 @@
     <ion-label>Rut</ion-label>
    <ion-input [(ngModel)]="datos.rut"></ion-input>
 
-    <ion-label>Imagen</ion-label>
-   <ion-input [(ngModel)]="datos.imagen"></ion-input>
-</div>
-</ion-content>
+   <ion-item>
+    <ion-label position="absolute">Foto</ion-label>
+    <ion-button (click)="takePhoto()" required>Escoga su foto</ion-button>   
+  </ion-item>
+  <ion-item>
+    <img class="image"  [src]="datos.imagen">
+  </ion-item>
 
 <ion-item>
 <ion-button (click)="registrar()">

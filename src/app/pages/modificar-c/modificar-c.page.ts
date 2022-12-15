@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Camera, CameraResultType } from '@capacitor/camera';
 import { AlertController } from '@ionic/angular';
 import { UserC } from 'src/app/models/models';
 import { Auth2Service } from 'src/app/services/auth2.service';
@@ -125,5 +126,16 @@ export class ModificarCPage implements OnInit {
       this.router.navigate(['/inicio'])
     }
   }
-
+  imagen: any
+ 
+  async takePhoto(){
+    const image = await Camera.getPhoto({
+      quality: 100,
+      allowEditing: true,
+      resultType: CameraResultType.Base64
+    });
+  
+    const imageUrl = image.base64String
+    this.info.imagen = 'data:image/jpeg;base64,' + imageUrl
+  };
 }
