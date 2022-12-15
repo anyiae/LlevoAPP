@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Camera, CameraResultType } from '@capacitor/camera';
-import { UserI } from 'src/app/models/models';
+import { GeneroU, UserI } from 'src/app/models/models';
 import { Auth2Service } from 'src/app/services/auth2.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 
@@ -27,11 +27,22 @@ export class PruebaPage implements OnInit {
     perfil: 'usuario',
   }
 
+    generos: GeneroU[] = [];
+
   constructor(private auth: Auth2Service,
     private firestore: FirestoreService,
     private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getGenero();
+   }
+
+getGenero() {
+  const path = 'Genero';
+  this.firestore.getCollection<GeneroU>(path).subscribe(res => {
+    this.generos = res;
+  })
+}
 
   async registrar() {
     const res = await this.auth.registarUser(this.datos).catch(error => {
@@ -39,6 +50,7 @@ export class PruebaPage implements OnInit {
     })
     if (res) {
       console.log('exito al crear el usuario');
+      console.log('datos -> ', this.datos)
       const path = 'Usuarios';
       const id = res.user.uid;
       this.datos.uid = id;

@@ -4,6 +4,7 @@ import { UserI } from 'src/app/models/models';
 import { Auth2Service } from 'src/app/services/auth2.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { InteractionService } from 'src/app/services/interaction.service';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-modificar-u',
@@ -112,4 +113,17 @@ export class ModificarUPage implements OnInit {
       this.interactionService.closeLoading();
     })
   }
+  imagen: any
+ 
+  async takePhoto(){
+    const image = await Camera.getPhoto({
+      quality: 100,
+      allowEditing: true,
+      resultType: CameraResultType.Base64
+    });
+  
+    const imageUrl = image.base64String
+    this.info.imagen = 'data:image/jpeg;base64,' + imageUrl
+  };
+
 }

@@ -92,6 +92,7 @@ async buscarChofer() {
   });
   await alert.present();
 
+  
 }
 testMarker(): void {
   this.viajarService.addMarkerCustom([-8.628139488926513, 41.159082702543635]);

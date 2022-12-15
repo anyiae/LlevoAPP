@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, PopoverController, ToastController } from '@ionic/angular';
+import { MenuComponent } from 'src/app/components/menu/menu.component';
 import { Auth2Service } from 'src/app/services/auth2.service';
 import { AvatarService } from 'src/app/services/avatar.service';
 
@@ -20,8 +21,19 @@ export class HomePage {
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
+    public popoverController: PopoverController,
     private router: Router) {
     this.loadProfile();
+  }
+  async openMenu(ev: any) {
+    console.log('abrir menu lateral');    
+    const menu = await this.popoverController.create({
+      component: MenuComponent,
+      cssClass: 'my-custom-class',
+      translucent: true,
+      event: ev,
+    });
+    await menu.present();
   }
 
   option = {

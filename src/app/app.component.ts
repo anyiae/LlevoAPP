@@ -11,9 +11,11 @@ import { InteractionService } from 'src/app/services/interaction.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  login: boolean = false;
 
   rol: 'usuario' | 'chofer' = 'chofer';
   public appPages = [
+    { title: 'Home', url: '/home', icon: 'home' },
     { title: 'About', url: '/about', icon: 'person' },
     { title: 'Coversor', url: '/coversor', icon: 'construct' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },
@@ -22,7 +24,17 @@ export class AppComponent {
 
   ];
 
-  constructor(private router: Router, private interaction: InteractionService, private authfirebase: AngularFireAuth, private Auth: Auth2Service) { }
+  constructor(private router: Router, private interaction: InteractionService, private authfirebase: AngularFireAuth, private Auth: Auth2Service) {
+    this.Auth.stateUser().subscribe( res =>{
+      if (res) {
+        console.log('está logeado')
+        this.login = true;
+      } else {
+        console.log('no está logeado')
+        this.login = false;
+      }
+    })
+   }
   goToHome() {
     this.router.navigate(['/inicio'])
   }

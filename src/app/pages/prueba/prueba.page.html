@@ -20,13 +20,20 @@
     <ion-input type="email" [(ngModel)]="datos.email"></ion-input>
 
     <ion-label>Edad</ion-label>
-    <ion-input type="number" [(ngModel)]="datos.capacidad"></ion-input>
+    <ion-input type="number" [(ngModel)]="datos.age"></ion-input>
 
     <ion-label>Contraseña</ion-label>
     <ion-input type="password" [(ngModel)]="datos.password"></ion-input>
-
-    <ion-label>Género</ion-label>
-    <ion-input [(ngModel)]="datos.gender"></ion-input>
+<br>
+    <ion-list>
+      <ion-item>
+        <ion-label>Género </ion-label>
+        <ion-select [(ngModel)]="datos.gender" placeholder="Seleccione género">
+          <ion-select-option *ngFor="let genero of generos" [value]="genero">{{genero.nombre}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <br>
 
     <ion-label>Comuna</ion-label>
    <ion-input [(ngModel)]="datos.comuna"></ion-input>
@@ -35,15 +42,17 @@
    <ion-input [(ngModel)]="datos.rut"></ion-input>
     
     <ion-label>Disponible</ion-label>
-     <ion-input type="number" [(ngModel)]="datos.disponible"></ion-input>
-
+     <ion-input  [(ngModel)]="datos.disponible"></ion-input>
+<div class > </div>
 
 
    <ion-item>
     <ion-label position="absolute">Foto</ion-label>
     <ion-button (click)="takePhoto()" required>Escoga su foto</ion-button>   
   </ion-item>
-
+  <ion-item>
+    <img class="image"  [src]="datos.imagen">
+  </ion-item>
 </ion-content>
 
 <ion-item>

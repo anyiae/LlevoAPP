@@ -20,3 +20,7 @@ export interface UserC {
     capacidad: string;
     perfil: 'chofer',
 }
+
+export interface GeneroU {
+    nombre: string;
+}

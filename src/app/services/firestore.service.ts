@@ -23,7 +23,7 @@ export class FirestoreService {
     return this.firestore.createId();
   }
 
-  async getCollection<tipo>(path: string) {
+   getCollection<tipo>(path: string) {
     const collection = this.firestore.collection<tipo>(path);
     return collection.valueChanges();
 

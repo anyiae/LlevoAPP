@@ -133,6 +133,9 @@ export class DestinoPage {
           placeholder: 'Apellido',
         },
         {
+          placeholder: 'Cantidad máxima',
+        },
+        {
           type: 'number',
           placeholder: 'Precio por persona',
           min: 1,
