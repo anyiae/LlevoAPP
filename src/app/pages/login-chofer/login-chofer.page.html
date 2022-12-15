@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="mycolor">
+      <ion-title>
+       Login Chofer
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+
+
+  <ion-item>
+    <ion-label>Correo</ion-label>
+    <ion-input type="email" [(ngModel)]="credenciales.correo"></ion-input>
+    
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="credenciales.password"></ion-input>
+  </ion-item>
+
+<ion-button (click)="login()">
+  login
+</ion-button>
+
+
+<ion-button [routerLink]="['/registrochofer']" routerLinkActive="router-link-active" >
+  o registrate
+</ion-button>
+</ion-content>

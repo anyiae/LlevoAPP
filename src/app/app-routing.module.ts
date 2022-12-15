@@ -62,6 +62,30 @@ const routes: Routes = [
     path: 'modal',
     loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalPageModule)
   },
+  {
+    path: 'pasajeros',
+    loadChildren: () => import('./pages/pasajeros/pasajeros.module').then( m => m.PasajerosPageModule)
+  },
+  {
+    path: 'conductores',
+    loadChildren: () => import('./pages/conductores/conductores.module').then( m => m.ConductoresPageModule)
+  },
+  {
+    path: 'login-chofer',
+    loadChildren: () => import('./pages/login-chofer/login-chofer.module').then( m => m.LoginChoferPageModule)
+  },
+  {
+    path: 'menu2',
+    loadChildren: () => import('./pages/menu2/menu2.module').then( m => m.Menu2PageModule)
+  },
+  {
+    path: 'registrochofer',
+    loadChildren: () => import('./pages/registrochofer/registrochofer.module').then( m => m.RegistrochoferPageModule)
+  },
+  {
+    path: 'modificar-c',
+    loadChildren: () => import('./pages/modificar-c/modificar-c.module').then( m => m.ModificarCPageModule)
+  },
 
 
 

@@ -1,0 +1,22 @@
+<app-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-tittle>Comienza tu viaje</ion-tittle>
+  </ion-toolbar>
+</app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>Empieza tu viaje</ion-card-title><br>
+      <ion-card-subtitle> Registrate para que puedas empezar a viajar      
+      </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-button (click)="addViaje()">Agrega tu destino</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

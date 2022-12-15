@@ -14,10 +14,17 @@ export interface UserI {
 }
 
 export interface UserC {
-    id?:string;
-    name:string;
+    nombre: string;
+    capacidad: number;
+    correo: string;
+    uid: string;
+    password: string;
     precio: string;
-    capacidad: string;
+    patente: string;
+    modelo: string;
+    comuna: string;
+    rut: string;
+    imagen: string;
     perfil: 'chofer',
 }
 

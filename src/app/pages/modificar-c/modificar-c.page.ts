@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserC } from 'src/app/models/models';
 import { Auth2Service } from 'src/app/services/auth2.service';
@@ -6,17 +7,20 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
-  selector: 'app-destino',
-  templateUrl: './destino.page.html',
-  styleUrls: ['./destino.page.scss'],
+  selector: 'app-modificar-c',
+  templateUrl: './modificar-c.page.html',
+  styleUrls: ['./modificar-c.page.scss'],
 })
-export class DestinoPage implements OnInit {
+export class ModificarCPage implements OnInit {
+
   uid: string = null;
   info: UserC = null;
   login: boolean = false;
+
   constructor(private authService: Auth2Service,
     private firestoreService: FirestoreService,
     public alertController: AlertController,
+    private router: Router,
     private interactionService: InteractionService) {
     this.authService.stateUser().subscribe(res => {
       if (res) {
@@ -99,16 +103,27 @@ export class DestinoPage implements OnInit {
   }
 
   async saveAtributo(name: string, input: any) {
-    await this.interactionService.presentLoading('Actualizando destino..')
+    await this.interactionService.presentLoading('actualizando...')
     const path = 'Chofer';
     const id = this.uid;
     const updateDoc = {
     };
     updateDoc[name] = input;
     this.firestoreService.updateDoc(path, id, updateDoc).then(() => {
-      this.interactionService.presentToast('Destino confirmado')
+      this.interactionService.presentToast('actualizado con éxito')
       this.interactionService.closeLoading();
     })
+  }
+
+  async eliminar(info: UserC) {
+    const res = await this.interactionService.presentAlert('¿Seguro que deseas eliminar?');
+    console.log('res ->', res);
+    if (res) {
+      const path = 'Chofer';
+      await this.firestoreService.deletedoc(path, info.uid);
+      this.interactionService.presentToast('Eliminado con éxito')
+      this.router.navigate(['/inicio'])
+    }
   }
 
 }
