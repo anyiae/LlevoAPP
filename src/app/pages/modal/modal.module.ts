@@ -1,4 +1,3 @@
-import { ChoferService } from './../../services/chofer.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -14,9 +13,8 @@ import { ModalPage } from './modal.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ModalPageRoutingModule,
-
+    ModalPageRoutingModule
   ],
   declarations: [ModalPage]
 })
-export class ModalPageModule { }
+export class ModalPageModule {}

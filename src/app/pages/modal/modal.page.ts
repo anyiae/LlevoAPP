@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { UserC } from 'src/app/models/models';
 import { ChoferService } from 'src/app/services/chofer.service';
@@ -7,10 +7,10 @@ import { ChoferService } from 'src/app/services/chofer.service';
   templateUrl: './modal.page.html',
   styleUrls: ['./modal.page.scss'],
 })
-export class ModalPage implements OnInit {
+export class ModalPage {  
 
   @Input() id: string;
-  usuario: UserC = null;
+  choferes: UserC = null;
 
   constructor(private choferService: ChoferService, private modalCtrl: ModalController,
     private toastCtrl: ToastController, private alertCtrl: AlertController) { }
@@ -21,20 +21,20 @@ export class ModalPage implements OnInit {
 
   getUsuario() {
     this.choferService.getUsuarioById(this.id).subscribe(respuesta => {
-      this.usuario = respuesta;
+      this.choferes = respuesta;
     });
   }
 
   async updateUsuario() {
-    this.choferService.updateUsuario(this.usuario);
+    this.choferService.updateUsuario(this.choferes);
     this.modalCtrl.dismiss();
-    this.toasPresent('User updated!!!');
+    this.toasPresent('Usuario actualizado');
   }
 
   async deleteUsuario() {
     const alert = await this.alertCtrl.create({
       header: 'Mensajes',
-      message: 'Estas seguro que deseas eliminar al usuario?',
+      message: '¿Esta seguro que deseas eliminar al usuario?',
       buttons: [
         {
           text: 'Cancel',
@@ -44,9 +44,9 @@ export class ModalPage implements OnInit {
           text: 'Confirm',
           role: 'confirm',
           handler: () => {
-            this.choferService.deleteUsuario(this.usuario);
+            this.choferService.deleteUsuario(this.choferes);
             this.modalCtrl.dismiss();
-            this.toasPresent('User deleted!!!');
+            this.toasPresent('Usario eliminado');
           }
         }
       ]
@@ -61,5 +61,6 @@ export class ModalPage implements OnInit {
     });
     toast.present();
   }
-
 }
+
+

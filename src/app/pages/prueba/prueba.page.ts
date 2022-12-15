@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Camera, CameraResultType } from '@capacitor/camera';
 import { UserI } from 'src/app/models/models';
 import { Auth2Service } from 'src/app/services/auth2.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
@@ -12,17 +13,17 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 export class PruebaPage implements OnInit {
 
   datos: UserI = {
-    nombre: null,
-    capacidad: null,
-    correo: null,
-    uid: null,
-    password: null,
-    sexo: null,
+    name: null,
+    lastname: null,
+    gender: null,
+    age: null,
+    email: null,
     comuna: null,
-    motivo: null,
-    telefono: null,
     rut: null,
+    disponible: null,
     imagen: null,
+    uid: null,
+    password:null,
     perfil: 'usuario',
   }
 
@@ -47,5 +48,17 @@ export class PruebaPage implements OnInit {
     }
 
   }
+  imagen: any
+ 
+  async takePhoto(){
+    const image = await Camera.getPhoto({
+      quality: 100,
+      allowEditing: true,
+      resultType: CameraResultType.Base64
+    });
+  
+    const imageUrl = image.base64String
+    this.datos.imagen = 'data:image/jpeg;base64,' + imageUrl
+  };
 
 }

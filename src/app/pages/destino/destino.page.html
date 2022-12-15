@@ -8,34 +8,6 @@
   
 </ion-header>
 
-<ion-content>
-  <ion-list *ngIf="info">
-    <ion-card class="card1">
-  <p> ¿A donde irás hoy?</p>
-  <h5> Escribe tu comuna de destino de el día de hoy y tu capacidad del auto </h5>
-  </ion-card>
-<ion-card class="card2">
-  <ion-item>
-   <ion-label>
-        Destino:
-        {{info.comuna}}
-      </ion-label>
-      <ion-icon (click)="editAtributo('comuna')" slot="end" name="create"></ion-icon>
-    </ion-item>
-      <ion-item>
-   <ion-label>
-        Capacidad:
-        {{info.capacidad}}
-      </ion-label>
-      <ion-icon (click)="editAtributo('capacidad')" slot="end" name="create"></ion-icon>
-    </ion-item>
-          <ion-item>
-   <ion-label>
-        Precio por persona:
-        {{info.precio}}
-      </ion-label>
-      <ion-icon (click)="editAtributo('precio')" slot="end" name="create"></ion-icon>
-    </ion-item>
-</ion-card>
-</ion-list>
+<ion-content [fullscreen]="true">
+  <ion-button (click)="presentAlert()">Agregate como chofer!</ion-button>
 </ion-content>

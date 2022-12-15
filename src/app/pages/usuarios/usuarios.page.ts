@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { Usuario } from 'src/app/services/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { RegistrarPage } from '../registrar/registrar.page';
 
 @Component({
   selector: 'app-usuarios',
@@ -24,15 +23,7 @@ export class UsuariosPage {
     });
   }
 
-  async openDetailUsuario(usuario) {
-    const modal = await this.modalCtrl.create({
-      component: RegistrarPage,
-      componentProps: { id: usuario.id },
-      breakpoints: [0, 0.5, 0.8, 1],
-      initialBreakpoint: 1
-    });
-    modal.present();
-  }
+
 
   async addUsuario() {
     const alert = await this.alertCtrl.create({

@@ -17,6 +17,8 @@ export class AppComponent {
     { title: 'About', url: '/about', icon: 'person' },
     { title: 'Coversor', url: '/coversor', icon: 'construct' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },
+    { title: 'Viajar', url: '/viajar', icon: 'airplane' },
+    { title: 'Registro Chofer', url: '/destino', icon: 'person-add' },
 
   ];
 

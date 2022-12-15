@@ -18,7 +18,9 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireModule } from '@angular/fire/compat';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ChoferService } from './services/chofer.service';
+import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
+const config: SocketIoConfig = {url: 'http://localhost:8101', options: {}};
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,10 +44,11 @@ import { ChoferService } from './services/chofer.service';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     ReactiveFormsModule,
+    SocketIoModule.forRoot(config)
 
 
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ChoferService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,53 +1,46 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>modal</ion-title>
+    <ion-title>Registrar conductores</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-content>
   <div *ngIf="usuario">
     <ion-item>
-      <ion-label position="floating">Name</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.nombre" required></ion-input>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.name" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Lastname</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.edad" required></ion-input>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.lastname" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Gender</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.correo" required></ion-input>
+      <ion-label position="floating">Sexo</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.gender" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Age</ion-label>
-      <ion-input type="number" [(ngModel)]="usuario.sexo" required></ion-input>
+      <ion-label position="floating">Edad</ion-label>
+      <ion-input type="number" [(ngModel)]="usuario.age" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Patente</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.patente" required></ion-input>
-    </ion-item>
-        <ion-item>
-      <ion-label position="floating">Modelo</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.modelo" required></ion-input>
-    </ion-item>
-        <ion-item>
-      <ion-label position="floating">Comuna</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario.comuna" required></ion-input>
-    </ion-item>
-        <ion-item>
       <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.email" required></ion-input>
+    </ion-item>
+
+
+        <ion-item>
+      <ion-label position="floating">Rut</ion-label>
       <ion-input type="email" [(ngModel)]="usuario.rut" required></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Image</ion-label>
-      <ion-input type="url" [(ngModel)]="usuario.imagen" required></ion-input>
-    </ion-item>
   </div>
-
+  </ion-card-content>
+</ion-card>
   <ion-button expand="block" color="success" (click)="updateUsuario()">
-    <ion-icon name="save" slot="start">UPDATE</ion-icon>
+    <ion-icon name="save" slot="start">Actualizar usuario</ion-icon>
   </ion-button>
   <ion-button expand="block" color="danger" (click)="deleteUsuario()">
-    <ion-icon name="trash" slot="start">DELETE</ion-icon>
+    <ion-icon name="trash" slot="start">Eliminar usuario</ion-icon>
   </ion-button>
 </ion-content>

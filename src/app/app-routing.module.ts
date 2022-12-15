@@ -21,10 +21,7 @@ const routes: Routes = [
     path: 'usuarios',
     loadChildren: () => import('./pages/usuarios/usuarios.module').then(m => m.UsuariosPageModule)
   },
-  {
-    path: 'registrar',
-    loadChildren: () => import('./pages/registrar/registrar.module').then(m => m.RegistrarPageModule)
-  },
+
   {
     path: 'coversor',
     loadChildren: () => import('./pages/coversor/coversor.module').then(m => m.CoversorPageModule)
@@ -43,49 +40,33 @@ const routes: Routes = [
     path: 'viajar',
     loadChildren: () => import('./pages/viajar/viajar.module').then(m => m.ViajarPageModule)
   },
-  {
-    path: 'menu2',
-    loadChildren: () => import('./pages/menu2/menu2.module').then(m => m.Menu2PageModule)
-  },
+  
   {
     path: 'prueba',
     loadChildren: () => import('./pages/prueba/prueba.module').then(m => m.PruebaPageModule)
   },
-  {
-    path: 'login-chofer',
-    loadChildren: () => import('./pages/login-chofer/login-chofer.module').then(m => m.LoginChoferPageModule)
-  },
+  
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule)
   },
   {
-    path: 'registrochofer',
-    loadChildren: () => import('./pages/registrochofer/registrochofer.module').then(m => m.RegistrochoferPageModule)
-  },
-  {
     path: 'modificar-u',
     loadChildren: () => import('./pages/modificar-u/modificar-u.module').then(m => m.ModificarUPageModule)
   },
-  {
-    path: 'modificar-c',
-    loadChildren: () => import('./pages/modificar-c/modificar-c.module').then(m => m.ModificarCPageModule)
-  },
+  
   {
     path: 'destino',
     loadChildren: () => import('./pages/destino/destino.module').then(m => m.DestinoPageModule)
-  },
-  {
-    path: 'modal',
-    loadChildren: () => import('./pages/modal/modal.module').then(m => m.ModalPageModule)
   },  {
-    path: 'transporte',
-    loadChildren: () => import('./pages/transporte/transporte.module').then( m => m.TransportePageModule)
+    path: 'modal',
+    loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalPageModule)
   },
-  {
-    path: 'nomovilizacion',
-    loadChildren: () => import('./pages/nomovilizacion/nomovilizacion.module').then( m => m.NomovilizacionPageModule)
-  }
+
+
+
+ 
+
 
 
 

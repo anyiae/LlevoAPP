@@ -16,7 +16,8 @@ export const environment = {
   production: false,
 
   API_KEY: '7eaaff8fc1bdd20dec54dd77f7aed69d',
-  API_URL: 'https://api.openweathermap.org/data/2.5/'
+  API_URL: 'https://api.openweathermap.org/data/2.5/',
+  mapPk:'pk.eyJ1Ijoic2Vrb2QiLCJhIjoiY2xianUzZWJxMTZrbTN2cDh3cWw3cjJ4eSJ9.cD2HxLu7txRF_JRE6pDMEA'
 
 
 };

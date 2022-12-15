@@ -1,29 +1,22 @@
 export interface UserI {
-    nombre: string;
-    capacidad: number;
-    correo: string;
-    uid: string;
-    password: string;
-    sexo: string;
-    comuna: string;
-    motivo: string;
-    telefono: string;
-    rut: string;
-    imagen: string;
+    uid:string;
+    name:string;
+    lastname:string;
+    gender:string;
+    age:number;
+    email:string;
+    comuna:string;
+    rut:string;
+    disponible:boolean;
+    imagen:string;
+    password:string;
     perfil: 'usuario',
 }
 
 export interface UserC {
-    nombre: string;
-    capacidad: number;
-    correo: string;
-    uid: string;
-    password: string;
+    id?:string;
+    name:string;
     precio: string;
-    patente: string;
-    modelo: string;
-    comuna: string;
-    rut: string;
-    imagen: string;
+    capacidad: string;
     perfil: 'chofer',
 }

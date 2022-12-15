@@ -1,17 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import { UserC } from 'src/app/models/models';
-import { Auth2Service } from 'src/app/services/auth2.service';
-import { FirestoreService } from 'src/app/services/firestore.service';
-import { InteractionService } from 'src/app/services/interaction.service';
+import { AlertController, ModalController, ToastController } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-destino',
   templateUrl: './destino.page.html',
   styleUrls: ['./destino.page.scss'],
 })
-export class DestinoPage implements OnInit {
-  uid: string = null;
+export class DestinoPage {
+
+
+  constructor( private alertCtrl:AlertController,
+    private modalCtrl:ModalController, private toastCtrl:ToastController) {
+
+  }
+
+
+
+
+ /* uid: string = null;
   info: UserC = null;
   login: boolean = false;
   constructor(private authService: Auth2Service,
@@ -109,6 +117,31 @@ export class DestinoPage implements OnInit {
       this.interactionService.presentToast('Destino confirmado')
       this.interactionService.closeLoading();
     })
+  }*/
+  
+
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'Registrate como chofer',
+      buttons: ['Guardar'],
+      inputs: [
+        {
+          placeholder: 'Nombre',
+        },
+        {
+          placeholder: 'Apellido',
+        },
+        {
+          type: 'number',
+          placeholder: 'Precio por persona',
+          min: 1,
+          max: 100,
+        },
+      ],
+    });
+
+    await alert.present();
   }
 
 }

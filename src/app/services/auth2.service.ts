@@ -19,11 +19,9 @@ export class Auth2Service {
   }
 
   registarUser(datos: UserI) {
-    return this.authfirebase.createUserWithEmailAndPassword(datos.correo, datos.password);
+    return this.authfirebase.createUserWithEmailAndPassword(datos.email, datos.password);
   }
-  registarChofer(datos: UserC) {
-    return this.authfirebase.createUserWithEmailAndPassword(datos.correo, datos.password);
-  }
+ 
 
   stateUser() {
     return this.authfirebase.authState
